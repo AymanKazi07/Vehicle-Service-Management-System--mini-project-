@@ -77,8 +77,8 @@ git add setup_git_branches.ps1
 git commit -m "feat(frontend): build all UI pages, 16 interactive components, and comprehensive test suite"
 
 # 7. Merge all cleanly into main
-Write-Host "`nMerging all 4 parts into unified main branch..." -ForegroundColor Green
-git checkout main
+Write-Host "`nPointing unified main branch to latest part..." -ForegroundColor Green
+git checkout -B main part-4-frontend-ui
 git merge part-1-backend-core --no-edit
 git merge part-2-backend-services --no-edit
 git merge part-3-frontend-infra --no-edit
