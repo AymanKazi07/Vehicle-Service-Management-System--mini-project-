@@ -1,0 +1,72 @@
+{
+  "user" : {
+    "id" : "cust-eefd03ef",
+    "name" : "Ravi Varma",
+    "email" : "cust1792755203778@gmail.com",
+    "passwordHash" : "$2a$10$CRBaXrW5dFq/OmyqEELXA.pvEoqvMYQu/bnaMCx95oCvO4cV1BxB2",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "DL01XY3830",
+    "ownerName" : "Ravi Varma",
+    "modelName" : "Honda City",
+    "category" : "FOUR_WHEELER",
+    "subType" : "Petrol",
+    "serviceHistory" : [ {
+      "bookingId" : "bk-3c022d04",
+      "date" : "2026-10-23",
+      "services" : [ "Oil and filter change" ],
+      "mechanicNames" : [ "Karan Singh" ],
+      "workshopName" : "East Side Garage",
+      "subtotal" : 1200.0,
+      "gst" : 216.0,
+      "total" : 1416.0
+    } ]
+  } ],
+  "bookings" : [ {
+    "bookingId" : "bk-3c022d04",
+    "customerId" : "cust-eefd03ef",
+    "vehicleRegNo" : "DL01XY3830",
+    "date" : "2026-10-25",
+    "jobIds" : [ "job-aea65b20" ],
+    "overallEnd" : "10:45:00",
+    "createdAt" : "2026-10-23T17:03:23.8313776"
+  } ],
+  "jobs" : [ {
+    "jobId" : "job-aea65b20",
+    "bookingId" : "bk-3c022d04",
+    "customerId" : "cust-eefd03ef",
+    "vehicleRegNo" : "DL01XY3830",
+    "serviceItemId" : "4w-p-1",
+    "serviceName" : "Oil and filter change",
+    "price" : 1200.0,
+    "expectedMinutes" : 45,
+    "queueClass" : "SHORT",
+    "date" : "2026-10-25",
+    "slotStart" : "10:00:00",
+    "mechanicId" : "mech-3d4f8bd1",
+    "status" : "COMPLETED",
+    "estimatedEnd" : "10:45:00",
+    "notes" : "Oil and filter replaced.",
+    "createdAt" : "2026-10-23T17:03:23.8313776"
+  } ],
+  "bills" : [ {
+    "billId" : "bill-6c65dc06",
+    "bookingId" : "bk-3c022d04",
+    "date" : "2026-10-23",
+    "vehicleRegNo" : "DL01XY3830",
+    "ownerName" : "Ravi Varma",
+    "workshopName" : "East Side Garage",
+    "lines" : [ {
+      "service" : "Oil and filter change",
+      "mechanic" : "Karan Singh",
+      "price" : 1200.0
+    } ],
+    "subtotal" : 1200.0,
+    "gstRate" : 0.18,
+    "gstAmount" : 216.0,
+    "grandTotal" : 1416.0
+  } ]
+}

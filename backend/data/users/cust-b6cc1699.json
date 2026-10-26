@@ -1,0 +1,93 @@
+{
+  "user" : {
+    "id" : "cust-b6cc1699",
+    "name" : "Bill Tester",
+    "email" : "billtest1792862159590@gmail.com",
+    "passwordHash" : "$2a$10$X.ZcRK0VjtHIzbSa/rnTEe9YGes781kUjPlLUaWVPe6kfkK6ueieK",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "TS09XY9661",
+    "ownerName" : "Bill Tester",
+    "modelName" : "Honda Civic",
+    "category" : "FOUR_WHEELER",
+    "subType" : "Petrol",
+    "serviceHistory" : [ {
+      "bookingId" : "bk-59411bdb",
+      "date" : "2026-10-24",
+      "services" : [ "Oil and filter change", "Battery replacement" ],
+      "mechanicNames" : [ "Karan Singh" ],
+      "workshopName" : "East Side Garage",
+      "subtotal" : 2000.0,
+      "gst" : 360.0,
+      "total" : 2360.0
+    } ]
+  } ],
+  "bookings" : [ {
+    "bookingId" : "bk-59411bdb",
+    "customerId" : "cust-b6cc1699",
+    "vehicleRegNo" : "TS09XY9661",
+    "date" : "2026-10-27",
+    "jobIds" : [ "job-3840117b", "job-1a6d8516" ],
+    "overallEnd" : "10:30:00",
+    "createdAt" : "2026-10-24T22:45:59.6641907"
+  } ],
+  "jobs" : [ {
+    "jobId" : "job-3840117b",
+    "bookingId" : "bk-59411bdb",
+    "customerId" : "cust-b6cc1699",
+    "vehicleRegNo" : "TS09XY9661",
+    "serviceItemId" : "4w-p-1",
+    "serviceName" : "Oil and filter change",
+    "price" : 1200.0,
+    "expectedMinutes" : 45,
+    "queueClass" : "SHORT",
+    "date" : "2026-10-27",
+    "slotStart" : "09:00:00",
+    "mechanicId" : "mech-3d4f8bd1",
+    "status" : "COMPLETED",
+    "estimatedEnd" : "09:45:00",
+    "notes" : "Done",
+    "createdAt" : "2026-10-24T22:45:59.6641907"
+  }, {
+    "jobId" : "job-1a6d8516",
+    "bookingId" : "bk-59411bdb",
+    "customerId" : "cust-b6cc1699",
+    "vehicleRegNo" : "TS09XY9661",
+    "serviceItemId" : "4w-p-2",
+    "serviceName" : "Battery replacement",
+    "price" : 800.0,
+    "expectedMinutes" : 30,
+    "queueClass" : "SHORT",
+    "date" : "2026-10-27",
+    "slotStart" : "10:00:00",
+    "mechanicId" : "mech-3d4f8bd1",
+    "status" : "COMPLETED",
+    "estimatedEnd" : "10:30:00",
+    "notes" : "Done",
+    "createdAt" : "2026-10-24T22:45:59.6641907"
+  } ],
+  "bills" : [ {
+    "billId" : "bill-d4f4a12d",
+    "bookingId" : "bk-59411bdb",
+    "date" : "2026-10-24",
+    "vehicleRegNo" : "TS09XY9661",
+    "ownerName" : "Bill Tester",
+    "workshopName" : "East Side Garage",
+    "lines" : [ {
+      "service" : "Oil and filter change",
+      "mechanic" : "Karan Singh",
+      "price" : 1200.0
+    }, {
+      "service" : "Battery replacement",
+      "mechanic" : "Karan Singh",
+      "price" : 800.0
+    } ],
+    "subtotal" : 2000.0,
+    "gstRate" : 0.18,
+    "gstAmount" : 360.0,
+    "grandTotal" : 2360.0
+  } ]
+}

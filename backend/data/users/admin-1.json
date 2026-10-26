@@ -1,0 +1,11 @@
+{
+  "user" : {
+    "id" : "admin-1",
+    "name" : "System Admin",
+    "email" : "admin@vehicleservice.com",
+    "passwordHash" : "$2a$10$DpkkaxNdr8Wj.Zmy3QOOcO6wIC8BY9/A/GZUXMNpciSnqVZisEEwG",
+    "role" : "ADMIN",
+    "workshopId" : null,
+    "categories" : [ ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "user" : {
+    "id" : "mech-d28c295c",
+    "name" : "Karan Singh",
+    "email" : "mech1792862159374@workshop.com",
+    "passwordHash" : "$2a$10$CQl3g20jTXyxD0lyHbRUAubKvEU488rH2vsF7YvVNk6Gem7XcdWjq",
+    "role" : "MECHANIC",
+    "workshopId" : "ws-38370503",
+    "categories" : [ "FOUR_WHEELER" ]
+  },
+  "mechanic" : {
+    "id" : "mech-d28c295c",
+    "name" : "Karan Singh",
+    "email" : "mech1792862159374@workshop.com",
+    "workshopId" : "ws-38370503",
+    "categories" : [ "FOUR_WHEELER" ]
+  },
+  "slots" : { }
+}

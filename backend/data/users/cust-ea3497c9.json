@@ -1,0 +1,64 @@
+{
+  "user" : {
+    "id" : "cust-ea3497c9",
+    "name" : "Booking Tester",
+    "email" : "cust1792759849784@test.com",
+    "passwordHash" : "$2a$10$gKFuccwbu34MShV2MXCwbehXNoOPfoWBe3acyLlCPjCtcLGuzBcAy",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "KA01AB9844",
+    "ownerName" : "Booking Tester",
+    "modelName" : "Yamaha R15",
+    "category" : "TWO_WHEELER",
+    "subType" : "Geared",
+    "serviceHistory" : [ ]
+  } ],
+  "bookings" : [ {
+    "bookingId" : "bk-3bc5a2d0",
+    "customerId" : "cust-ea3497c9",
+    "vehicleRegNo" : "KA01AB9844",
+    "date" : "2026-10-24",
+    "jobIds" : [ "job-6b2b7bb7", "job-12abcca7" ],
+    "overallEnd" : "18:00:00",
+    "createdAt" : "2026-10-23T18:20:49.8508885"
+  } ],
+  "jobs" : [ {
+    "jobId" : "job-6b2b7bb7",
+    "bookingId" : "bk-3bc5a2d0",
+    "customerId" : "cust-ea3497c9",
+    "vehicleRegNo" : "KA01AB9844",
+    "serviceItemId" : "2w-g-1",
+    "serviceName" : "General service",
+    "price" : 600.0,
+    "expectedMinutes" : 90,
+    "queueClass" : "SHORT",
+    "date" : "2026-10-24",
+    "slotStart" : "15:00:00",
+    "mechanicId" : "mech-1",
+    "status" : "PENDING",
+    "estimatedEnd" : "16:30:00",
+    "notes" : null,
+    "createdAt" : "2026-10-23T18:20:49.848898"
+  }, {
+    "jobId" : "job-12abcca7",
+    "bookingId" : "bk-3bc5a2d0",
+    "customerId" : "cust-ea3497c9",
+    "vehicleRegNo" : "KA01AB9844",
+    "serviceItemId" : "2w-g-8",
+    "serviceName" : "Engine overhaul",
+    "price" : 6000.0,
+    "expectedMinutes" : 480,
+    "queueClass" : "LONG",
+    "date" : "2026-10-28",
+    "slotStart" : "09:00:00",
+    "mechanicId" : "mech-1",
+    "status" : "PENDING",
+    "estimatedEnd" : "18:00:00",
+    "notes" : null,
+    "createdAt" : "2026-10-23T18:20:49.8499198"
+  } ],
+  "bills" : [ ]
+}

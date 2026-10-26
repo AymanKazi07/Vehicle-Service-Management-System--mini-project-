@@ -1,0 +1,19 @@
+{
+  "user" : {
+    "id" : "mech-2",
+    "name" : "Amit Sharma",
+    "email" : "amit@vehicleservice.com",
+    "passwordHash" : "$2a$10$yeU0jRqtJbOOyJke9IS7meae/LnLDmAYP6PeiN0oJMI3VLFutaIrW",
+    "role" : "MECHANIC",
+    "workshopId" : "ws-1",
+    "categories" : [ "FOUR_WHEELER", "HEAVY" ]
+  },
+  "mechanic" : {
+    "id" : "mech-2",
+    "name" : "Amit Sharma",
+    "email" : "amit@vehicleservice.com",
+    "workshopId" : "ws-1",
+    "categories" : [ "FOUR_WHEELER", "HEAVY" ]
+  },
+  "slots" : { }
+}

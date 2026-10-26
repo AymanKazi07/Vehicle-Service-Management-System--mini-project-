@@ -1,0 +1,22 @@
+{
+  "user" : {
+    "id" : "cust-ec3670a6",
+    "name" : "Test Customer",
+    "email" : "testcustomer99@test.com",
+    "passwordHash" : "$2a$10$.tJ2PF5oX5cVl8.DS2/6POrM7ckESsHZeU8aSyjb96nU3kEg6646q",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "MH12AB9999",
+    "ownerName" : "Test Customer",
+    "modelName" : "Honda Activa",
+    "category" : "TWO_WHEELER",
+    "subType" : "Scooter",
+    "serviceHistory" : [ ]
+  } ],
+  "bookings" : [ ],
+  "jobs" : [ ],
+  "bills" : [ ]
+}

@@ -1,0 +1,22 @@
+{
+  "user" : {
+    "id" : "cust-b014edad",
+    "name" : "Test User",
+    "email" : "testuser1792754452627@example.com",
+    "passwordHash" : "$2a$10$pptVpie3sDf0mvNN5TkJneAjxBidwy136xD9merxGyS5HERoCTJSK",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "MH12AB2885",
+    "ownerName" : "Test User",
+    "modelName" : "Pulsar 150",
+    "category" : "TWO_WHEELER",
+    "subType" : "Geared",
+    "serviceHistory" : [ ]
+  } ],
+  "bookings" : [ ],
+  "jobs" : [ ],
+  "bills" : [ ]
+}

@@ -1,0 +1,212 @@
+{
+  "user" : {
+    "id" : "mech-3d4f8bd1",
+    "name" : "Karan Singh",
+    "email" : "mech1792754453086@workshop.com",
+    "passwordHash" : "$2a$10$xzFKeFgPCGphdVd1OiZd0ei.m4w8sCq8XjeFixWgktrvr3uebwfx6",
+    "role" : "MECHANIC",
+    "workshopId" : "ws-086a051f",
+    "categories" : [ "FOUR_WHEELER" ]
+  },
+  "mechanic" : {
+    "id" : "mech-3d4f8bd1",
+    "name" : "Karan Singh",
+    "email" : "mech1792754453086@workshop.com",
+    "workshopId" : "ws-086a051f",
+    "categories" : [ "FOUR_WHEELER" ]
+  },
+  "slots" : {
+    "2026-10-25" : [ {
+      "date" : "2026-10-25",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-6a34ab23",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-aea65b20",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-75686216",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-25",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    } ],
+    "2026-10-26" : [ {
+      "date" : "2026-10-26",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-915d968c",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-6e75f6ab",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-0e8f332f",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-c04abbf6",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-08b9159d",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-26",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    } ],
+    "2026-10-27" : [ {
+      "date" : "2026-10-27",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-3840117b",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-1a6d8516",
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    }, {
+      "date" : "2026-10-27",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-3d4f8bd1"
+    } ]
+  }
+}

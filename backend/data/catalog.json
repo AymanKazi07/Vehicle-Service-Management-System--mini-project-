@@ -1,0 +1,494 @@
+{
+  "HEAVY" : {
+    "DEFAULT" : [ {
+      "id" : "hv-1",
+      "name" : "Oil and filter change",
+      "price" : 3500.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "hv-2",
+      "name" : "Tyre replacement",
+      "price" : 12000.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "hv-3",
+      "name" : "Air brake system service",
+      "price" : 5000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "hv-4",
+      "name" : "General service",
+      "price" : 6000.0,
+      "expectedMinutes" : 240,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "hv-5",
+      "name" : "Brake relining",
+      "price" : 8000.0,
+      "expectedMinutes" : 360,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "hv-6",
+      "name" : "Chassis welding repair",
+      "price" : 15000.0,
+      "expectedMinutes" : 720,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "hv-7",
+      "name" : "Gearbox overhaul",
+      "price" : 35000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "hv-8",
+      "name" : "Engine replacement",
+      "price" : 120000.0,
+      "expectedMinutes" : 2880,
+      "queueClass" : "LONG"
+    } ]
+  },
+  "TWO_WHEELER" : {
+    "EV" : [ {
+      "id" : "2w-e-1",
+      "name" : "Battery and motor check",
+      "price" : 700.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-e-2",
+      "name" : "Charger and wiring inspection",
+      "price" : 450.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-e-3",
+      "name" : "Brake service",
+      "price" : 350.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-e-4",
+      "name" : "Software update and diagnostics",
+      "price" : 500.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-e-5",
+      "name" : "Motor replacement",
+      "price" : 15000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "2w-e-6",
+      "name" : "Battery pack replacement",
+      "price" : 25000.0,
+      "expectedMinutes" : 360,
+      "queueClass" : "LONG"
+    } ],
+    "Scooter" : [ {
+      "id" : "2w-s-1",
+      "name" : "General service",
+      "price" : 500.0,
+      "expectedMinutes" : 75,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-s-2",
+      "name" : "Oil change",
+      "price" : 300.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-s-3",
+      "name" : "Brake adjustment",
+      "price" : 200.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-s-4",
+      "name" : "CVT belt replacement",
+      "price" : 800.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-s-5",
+      "name" : "Throttle body cleaning",
+      "price" : 400.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-s-6",
+      "name" : "Engine overhaul",
+      "price" : 5500.0,
+      "expectedMinutes" : 420,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "2w-s-7",
+      "name" : "Full body painting",
+      "price" : 4500.0,
+      "expectedMinutes" : 720,
+      "queueClass" : "LONG"
+    } ],
+    "Geared" : [ {
+      "id" : "2w-g-1",
+      "name" : "General service",
+      "price" : 600.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-2",
+      "name" : "Oil change",
+      "price" : 350.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-3",
+      "name" : "Chain clean and lube",
+      "price" : 250.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-4",
+      "name" : "Brake pad replacement",
+      "price" : 400.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-5",
+      "name" : "Tyre replacement",
+      "price" : 500.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-6",
+      "name" : "Battery replacement",
+      "price" : 300.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-7",
+      "name" : "Clutch plate replacement",
+      "price" : 900.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "2w-g-8",
+      "name" : "Engine overhaul",
+      "price" : 6000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "2w-g-9",
+      "name" : "Full body painting",
+      "price" : 5000.0,
+      "expectedMinutes" : 720,
+      "queueClass" : "LONG"
+    } ]
+  },
+  "THREE_WHEELER" : {
+    "Petrol" : [ {
+      "id" : "3w-p-1",
+      "name" : "Engine tune-up",
+      "price" : 1200.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-p-2",
+      "name" : "Oil change",
+      "price" : 400.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-p-3",
+      "name" : "Spark plug replacement",
+      "price" : 250.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-p-4",
+      "name" : "Brake service",
+      "price" : 600.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-p-5",
+      "name" : "Gearbox repair",
+      "price" : 4000.0,
+      "expectedMinutes" : 360,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "3w-p-6",
+      "name" : "Full body painting",
+      "price" : 8000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    } ],
+    "CNG" : [ {
+      "id" : "3w-c-1",
+      "name" : "Gas kit inspection",
+      "price" : 800.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-c-2",
+      "name" : "Oil and filter change",
+      "price" : 700.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-c-3",
+      "name" : "Brake service",
+      "price" : 600.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-c-4",
+      "name" : "Cylinder hydro-test",
+      "price" : 1500.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "3w-c-5",
+      "name" : "Clutch replacement",
+      "price" : 1800.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "3w-c-6",
+      "name" : "Engine overhaul",
+      "price" : 9000.0,
+      "expectedMinutes" : 720,
+      "queueClass" : "LONG"
+    } ]
+  },
+  "FOUR_WHEELER" : {
+    "EV" : [ {
+      "id" : "4w-e-1",
+      "name" : "Battery diagnostics",
+      "price" : 1500.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-e-2",
+      "name" : "Brake service",
+      "price" : 1800.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-e-3",
+      "name" : "Coolant system service",
+      "price" : 2200.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-e-4",
+      "name" : "Charging port repair",
+      "price" : 3500.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-e-5",
+      "name" : "Battery pack replacement",
+      "price" : 250000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-1",
+      "name" : "Interior detailing",
+      "price" : 3000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-2",
+      "name" : "Dent and scratch repair",
+      "price" : 6000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-3",
+      "name" : "Full body painting",
+      "price" : 25000.0,
+      "expectedMinutes" : 2880,
+      "queueClass" : "LONG"
+    } ],
+    "Petrol" : [ {
+      "id" : "4w-p-1",
+      "name" : "Oil and filter change",
+      "price" : 1200.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-p-2",
+      "name" : "Battery replacement",
+      "price" : 800.0,
+      "expectedMinutes" : 30,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-p-3",
+      "name" : "Wheel alignment and balancing",
+      "price" : 1000.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-p-4",
+      "name" : "Brake pad replacement",
+      "price" : 1800.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-p-5",
+      "name" : "AC service",
+      "price" : 200.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-p-6",
+      "name" : "General service",
+      "price" : 2500.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-p-7",
+      "name" : "Clutch replacement",
+      "price" : 6000.0,
+      "expectedMinutes" : 300,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-p-8",
+      "name" : "Engine overhaul",
+      "price" : 25000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-1",
+      "name" : "Interior detailing",
+      "price" : 3000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-2",
+      "name" : "Dent and scratch repair",
+      "price" : 6000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-3",
+      "name" : "Full body painting",
+      "price" : 25000.0,
+      "expectedMinutes" : 2880,
+      "queueClass" : "LONG"
+    } ],
+    "Diesel" : [ {
+      "id" : "4w-d-1",
+      "name" : "Oil and filter change",
+      "price" : 1800.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-d-2",
+      "name" : "Fuel filter replacement",
+      "price" : 1200.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-d-3",
+      "name" : "General service",
+      "price" : 3000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-d-4",
+      "name" : "Clutch replacement",
+      "price" : 7000.0,
+      "expectedMinutes" : 300,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-d-5",
+      "name" : "Turbocharger repair",
+      "price" : 12000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-d-6",
+      "name" : "Engine replacement",
+      "price" : 60000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-1",
+      "name" : "Interior detailing",
+      "price" : 3000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-2",
+      "name" : "Dent and scratch repair",
+      "price" : 6000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-3",
+      "name" : "Full body painting",
+      "price" : 25000.0,
+      "expectedMinutes" : 2880,
+      "queueClass" : "LONG"
+    } ],
+    "CNG" : [ {
+      "id" : "4w-c-1",
+      "name" : "CNG kit inspection",
+      "price" : 1000.0,
+      "expectedMinutes" : 60,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-c-2",
+      "name" : "Oil and filter change",
+      "price" : 1300.0,
+      "expectedMinutes" : 45,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-c-3",
+      "name" : "Regulator and injector cleaning",
+      "price" : 1500.0,
+      "expectedMinutes" : 90,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-c-4",
+      "name" : "Cylinder hydro-test",
+      "price" : 2000.0,
+      "expectedMinutes" : 120,
+      "queueClass" : "SHORT"
+    }, {
+      "id" : "4w-c-5",
+      "name" : "General service",
+      "price" : 2800.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-c-6",
+      "name" : "Engine overhaul",
+      "price" : 28000.0,
+      "expectedMinutes" : 1440,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-1",
+      "name" : "Interior detailing",
+      "price" : 3000.0,
+      "expectedMinutes" : 180,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-2",
+      "name" : "Dent and scratch repair",
+      "price" : 6000.0,
+      "expectedMinutes" : 480,
+      "queueClass" : "LONG"
+    }, {
+      "id" : "4w-all-3",
+      "name" : "Full body painting",
+      "price" : 25000.0,
+      "expectedMinutes" : 2880,
+      "queueClass" : "LONG"
+    } ]
+  }
+}
