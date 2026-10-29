@@ -19,10 +19,10 @@ export const Navbar = () => {
         await login('customer@test.com', 'password123');
         navigate('/dashboard');
       } else if (targetRole === 'MECHANIC') {
-        await login('mechanic@test.com', 'password123');
+        await login('rajesh@vehicleservice.com', 'mech123');
         navigate('/mechanic');
       } else if (targetRole === 'ADMIN') {
-        await login('admin@test.com', 'password123');
+        await login('admin@vehicleservice.com', 'admin123');
         navigate('/admin');
       }
     } catch (err) {
@@ -129,7 +129,7 @@ export const Navbar = () => {
                     style={{ justifyContent: 'flex-start', padding: '0.45rem 0.65rem', border: 'none', textAlign: 'left' }}
                     onClick={() => handleQuickSwitch('ADMIN')}
                   >
-                    🛡️ Admin (Vikram)
+                    🛡️ Admin (System Admin)
                   </button>
                 </div>
               )}

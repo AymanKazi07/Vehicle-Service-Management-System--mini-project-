@@ -11,11 +11,8 @@ export const getVehicles = async () => {
     const response = await axiosClient.get('/vehicles');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock vehicle store.');
-      return mockStore.getVehicles();
-    }
-    throw err;
+    console.warn('Backend unavailable or unauthenticated, falling back to mock vehicle store.', err);
+    return mockStore.getVehicles();
   }
 };
 
@@ -27,11 +24,8 @@ export const addVehicle = async (vehicleData) => {
     const response = await axiosClient.post('/vehicles', vehicleData);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock vehicle store.');
-      return mockStore.addVehicle(vehicleData);
-    }
-    throw err;
+    console.warn('Backend unavailable, falling back to mock vehicle store.', err);
+    return mockStore.addVehicle(vehicleData);
   }
 };
 
@@ -43,11 +37,8 @@ export const getHistory = async (regNo) => {
     const response = await axiosClient.get(`/vehicles/${regNo}/history`);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock vehicle history store.');
-      return mockStore.getHistory(regNo);
-    }
-    throw err;
+    console.warn('Backend unavailable, falling back to mock vehicle history store.', err);
+    return mockStore.getHistory(regNo);
   }
 };
 
@@ -58,4 +49,3 @@ export const vehicleApi = {
 };
 
 export default vehicleApi;
-

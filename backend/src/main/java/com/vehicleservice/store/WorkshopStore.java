@@ -15,10 +15,12 @@ public class WorkshopStore {
     }
 
     public void put(Workshop workshop) {
+        if (workshop == null || workshop.getId() == null) return;
         workshopsById.put(workshop.getId(), workshop);
     }
 
     public Workshop findById(String id) {
+        if (id == null) return null;
         return workshopsById.get(id);
     }
 
@@ -27,6 +29,7 @@ public class WorkshopStore {
     }
 
     public void remove(String id) {
+        if (id == null) return;
         workshopsById.remove(id);
     }
 

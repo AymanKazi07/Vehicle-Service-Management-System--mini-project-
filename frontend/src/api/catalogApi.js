@@ -14,11 +14,8 @@ export const getServices = async (category, subType) => {
     const response = await axiosClient.get('/services', { params });
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock catalog store.');
-      return mockStore.getServices(category, subType);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock catalog store.', err);
+    return mockStore.getServices(category, subType);
   }
 };
 
@@ -30,11 +27,8 @@ export const updateService = async (id, body) => {
     const response = await axiosClient.put(`/admin/services/${id}`, body);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock catalog store.');
-      return mockStore.updateService(id, body);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock catalog store.', err);
+    return mockStore.updateService(id, body);
   }
 };
 

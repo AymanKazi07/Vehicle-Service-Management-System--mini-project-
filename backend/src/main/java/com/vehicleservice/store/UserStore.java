@@ -20,6 +20,7 @@ public class UserStore {
     }
 
     public void put(User user) {
+        if (user == null || user.getId() == null) return;
         usersById.put(user.getId(), user);
         if (user.getEmail() != null) {
             userIdByEmail.put(user.getEmail().toLowerCase(), user.getId());
@@ -27,6 +28,7 @@ public class UserStore {
     }
 
     public User findById(String id) {
+        if (id == null) return null;
         return usersById.get(id);
     }
 
@@ -41,6 +43,7 @@ public class UserStore {
     }
 
     public void remove(String id) {
+        if (id == null) return;
         User user = usersById.remove(id);
         if (user != null && user.getEmail() != null) {
             userIdByEmail.remove(user.getEmail().toLowerCase());

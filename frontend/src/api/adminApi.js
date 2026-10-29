@@ -11,11 +11,8 @@ export const getWorkshops = async () => {
     const response = await axiosClient.get('/admin/workshops');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock workshops store.');
-      return mockStore.getWorkshops();
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock workshops store.', err);
+    return mockStore.getWorkshops();
   }
 };
 
@@ -27,11 +24,8 @@ export const addWorkshop = async (body) => {
     const response = await axiosClient.post('/admin/workshops', body);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock workshops store.');
-      return mockStore.addWorkshop(body);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock workshops store.', err);
+    return mockStore.addWorkshop(body);
   }
 };
 
@@ -45,11 +39,8 @@ export const getMechanics = async () => {
     const response = await axiosClient.get('/admin/mechanics');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock mechanics store.');
-      return mockStore.getMechanics();
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock mechanics store.', err);
+    return mockStore.getMechanics();
   }
 };
 
@@ -61,11 +52,8 @@ export const addMechanic = async (body) => {
     const response = await axiosClient.post('/admin/mechanics', body);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock mechanics store.');
-      return mockStore.addMechanic(body);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock mechanics store.', err);
+    return mockStore.addMechanic(body);
   }
 };
 
@@ -79,11 +67,8 @@ export const getAllBookings = async () => {
     const response = await axiosClient.get('/admin/bookings');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock bookings store.');
-      return mockStore.getAllBookings();
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock bookings store.', err);
+    return mockStore.getAllBookings();
   }
 };
 

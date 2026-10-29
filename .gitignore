@@ -28,6 +28,12 @@ frontend/.env
 .settings/
 
 # Runtime and data storage
+/data/
+backend/data/users/cust-*
+!backend/data/users/cust-default-1.json
+backend/data/users/mech-*
+!backend/data/users/mech-1.json
+!backend/data/users/mech-2.json
 backend/data/*.json
 !backend/data/catalog.json
 !backend/data/workshops.json

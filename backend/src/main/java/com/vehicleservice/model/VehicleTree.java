@@ -25,8 +25,11 @@ public class VehicleTree {
     }
 
     public void addVehicle(Vehicle vehicle) {
-        tree.computeIfAbsent(vehicle.getCategory(), c -> new ConcurrentHashMap<>())
-            .computeIfAbsent(vehicle.getSubType(), st -> new CopyOnWriteArrayList<>())
+        if (vehicle == null) return;
+        Category cat = vehicle.getCategory() != null ? vehicle.getCategory() : Category.TWO_WHEELER;
+        String sub = vehicle.getSubType() != null && !vehicle.getSubType().isBlank() ? vehicle.getSubType() : "DEFAULT";
+        tree.computeIfAbsent(cat, c -> new ConcurrentHashMap<>())
+            .computeIfAbsent(sub, st -> new CopyOnWriteArrayList<>())
             .add(vehicle);
     }
 
@@ -41,9 +44,19 @@ public class VehicleTree {
     }
 
     public List<Vehicle> getVehicles(Category category, String subType) {
+        if (category == null) return getAllVehicles();
         Map<String, List<Vehicle>> subTypeMap = tree.get(category);
         if (subTypeMap == null) return Collections.emptyList();
-        List<Vehicle> list = subTypeMap.get(subType);
-        return list != null ? list : Collections.emptyList();
+        if (subType == null || subType.isBlank()) {
+            List<Vehicle> all = new ArrayList<>();
+            subTypeMap.values().forEach(all::addAll);
+            return all;
+        }
+        for (Map.Entry<String, List<Vehicle>> entry : subTypeMap.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(subType)) {
+                return entry.getValue();
+            }
+        }
+        return Collections.emptyList();
     }
 }

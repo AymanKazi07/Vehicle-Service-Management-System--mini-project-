@@ -1,0 +1,39 @@
+{
+  "user" : {
+    "id" : "cust-default-1",
+    "name" : "Aarav Sharma",
+    "email" : "customer@test.com",
+    "passwordHash" : "$2a$10$YH/kV/IlLHcXIx/93lEql.skQFD2MnG1x9tTJFE4DeQMxqoXn34fi",
+    "role" : "CUSTOMER",
+    "workshopId" : null,
+    "categories" : [ ]
+  },
+  "vehicles" : [ {
+    "registrationNumber" : "MH02AB1234",
+    "ownerName" : "Aarav Sharma",
+    "modelName" : "Royal Enfield Classic 350",
+    "category" : "TWO_WHEELER",
+    "subType" : "Geared",
+    "serviceHistory" : [ {
+      "bookingId" : "BKG-101",
+      "date" : "2026-09-15",
+      "services" : [ "General service", "Oil change" ],
+      "mechanicNames" : [ "Rajesh Kumar" ],
+      "workshopName" : "Central Auto Care",
+      "subtotal" : 850.0,
+      "gst" : 153.0,
+      "total" : 1003.0,
+      "status" : "COMPLETED"
+    } ]
+  }, {
+    "registrationNumber" : "DL01XY9876",
+    "ownerName" : "Aarav Sharma",
+    "modelName" : "Hyundai Creta SX",
+    "category" : "FOUR_WHEELER",
+    "subType" : "Petrol",
+    "serviceHistory" : [ ]
+  } ],
+  "bookings" : [ ],
+  "jobs" : [ ],
+  "bills" : [ ]
+}

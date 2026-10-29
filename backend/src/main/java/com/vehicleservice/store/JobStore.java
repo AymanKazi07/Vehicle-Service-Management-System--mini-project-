@@ -29,6 +29,7 @@ public class JobStore {
     }
 
     public void addJob(Job job) {
+        if (job == null || job.getJobId() == null) return;
         jobsById.put(job.getJobId(), job);
         if (job.getQueueClass() == QueueClass.SHORT) {
             shortQueue.add(job);
@@ -38,6 +39,7 @@ public class JobStore {
     }
 
     public Job findById(String jobId) {
+        if (jobId == null) return null;
         return jobsById.get(jobId);
     }
 

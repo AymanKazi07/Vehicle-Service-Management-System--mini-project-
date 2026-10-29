@@ -24,11 +24,13 @@ public class MechanicStore {
     }
 
     public void putMechanic(Mechanic mechanic) {
+        if (mechanic == null || mechanic.getId() == null) return;
         mechanicsById.put(mechanic.getId(), mechanic);
         mechanicSlots.computeIfAbsent(mechanic.getId(), k -> new TreeMap<>());
     }
 
     public Mechanic findById(String id) {
+        if (id == null) return null;
         return mechanicsById.get(id);
     }
 
@@ -37,10 +39,12 @@ public class MechanicStore {
     }
 
     public TreeMap<LocalDate, List<Slot>> getSlotsForMechanic(String mechanicId) {
+        if (mechanicId == null) return new TreeMap<>();
         return mechanicSlots.computeIfAbsent(mechanicId, k -> new TreeMap<>());
     }
 
     public void remove(String id) {
+        if (id == null) return;
         mechanicsById.remove(id);
         mechanicSlots.remove(id);
     }

@@ -9,6 +9,16 @@
   "address" : "88 East Wing Rd",
   "contact" : "9871112233"
 }, {
+  "id" : "ws-74d3f73c",
+  "name" : "East Side Garage",
+  "address" : "88 East Wing Rd",
+  "contact" : "9871112233"
+}, {
+  "id" : "ws-5dd0e841",
+  "name" : "East Side Garage",
+  "address" : "88 East Wing Rd",
+  "contact" : "9871112233"
+}, {
   "id" : "ws-9448d264",
   "name" : "East Side Garage",
   "address" : "88 East Wing Rd",
@@ -23,4 +33,14 @@
   "name" : "Central Auto Care",
   "address" : "123 Main Street, Sector 5",
   "contact" : "+91 9876543210"
+}, {
+  "id" : "ws-883fc7c7",
+  "name" : "East Side Garage",
+  "address" : "88 East Wing Rd",
+  "contact" : "9871112233"
+}, {
+  "id" : "ws-ac2e022b",
+  "name" : "East Side Garage",
+  "address" : "88 East Wing Rd",
+  "contact" : "9871112233"
 } ]

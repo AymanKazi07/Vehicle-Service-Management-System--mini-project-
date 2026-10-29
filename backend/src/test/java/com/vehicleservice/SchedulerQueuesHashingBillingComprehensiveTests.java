@@ -7,8 +7,7 @@ import com.vehicleservice.scheduler.LongJobComparator;
 import com.vehicleservice.scheduler.ShortJobComparator;
 import com.vehicleservice.scheduler.SlotAllocator;
 import com.vehicleservice.service.*;
-import com.vehicleservice.store.JobStore;
-import com.vehicleservice.store.VehicleStore;
+import com.vehicleservice.store.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -50,6 +49,24 @@ class SchedulerQueuesHashingBillingComprehensiveTests {
 
     @Autowired
     private BillingService billingService;
+
+    @Autowired
+    private CatalogStore catalogStore;
+
+    @Autowired
+    private UserStore userStore;
+
+    @Autowired
+    private BookingStore bookingStore;
+
+    @Autowired
+    private BillStore billStore;
+
+    @Autowired
+    private WorkshopStore workshopStore;
+
+    @Autowired
+    private MechanicStore mechanicStore;
 
     @Test
     void testShortQueueComparatorOrdering() {
@@ -132,6 +149,7 @@ class SchedulerQueuesHashingBillingComprehensiveTests {
         // Verify it was promoted from longQueue to shortQueue
         assertFalse(jobStore.getLongQueue().contains(oldLongJob));
         assertTrue(jobStore.getShortQueue().contains(oldLongJob));
+        assertEquals(QueueClass.SHORT, oldLongJob.getQueueClass());
     }
 
     @Test
@@ -208,5 +226,80 @@ class SchedulerQueuesHashingBillingComprehensiveTests {
         assertEquals(2000.0, rec.getSubtotal());
         assertEquals(360.0, rec.getGst());
         assertEquals(2360.0, rec.getTotal());
+    }
+
+    @Test
+    void testCatalogStoreNullCategoryAndDeduplication() {
+        // Querying services with null category must NOT throw NPE and should return all services
+        List<ServiceItem> allServices = catalogStore.getServices(null, null);
+        assertNotNull(allServices);
+        assertFalse(allServices.isEmpty());
+
+        // Querying with alias or subtype with null category should find matches
+        List<ServiceItem> geared = catalogStore.getServices(null, "Geared");
+        assertNotNull(geared);
+        assertFalse(geared.isEmpty());
+
+        // Verify deduplication: no duplicate service IDs returned
+        long uniqueIds = geared.stream().map(ServiceItem::getId).distinct().count();
+        assertEquals(geared.size(), uniqueIds);
+    }
+
+    @Test
+    void testVehicleTreeAndStoresNullSafety() {
+        VehicleTree tree = new VehicleTree();
+        // Null category and null subType must not crash with NPE
+        assertDoesNotThrow(() -> tree.getVehicles(null, null));
+        assertDoesNotThrow(() -> tree.getVehicles(Category.TWO_WHEELER, null));
+        assertDoesNotThrow(() -> tree.addVehicle(null));
+
+        Vehicle nullFieldsVehicle = new Vehicle("DL99ZZ0001", "Owner", "Model", null, null);
+        assertDoesNotThrow(() -> tree.addVehicle(nullFieldsVehicle));
+
+        // Store lookups with null must return null or empty list without throwing NPE
+        assertNull(vehicleStore.findByRegistrationNumber(null));
+        assertNull(vehicleStore.getTree(null));
+        assertTrue(vehicleStore.getVehiclesByCustomerId(null).isEmpty());
+
+        assertNull(userStore.findById(null));
+        assertNull(userStore.findByEmail(null));
+        assertDoesNotThrow(() -> userStore.remove(null));
+
+        assertNull(jobStore.findById(null));
+        assertDoesNotThrow(() -> jobStore.addJob(null));
+
+        assertNull(bookingStore.findById(null));
+        assertDoesNotThrow(() -> bookingStore.put(null));
+
+        assertNull(billStore.findByBookingId(null));
+        assertDoesNotThrow(() -> billStore.put(null));
+
+        assertNull(workshopStore.findById(null));
+        assertDoesNotThrow(() -> workshopStore.remove(null));
+
+        assertNull(mechanicStore.findById(null));
+        assertDoesNotThrow(() -> mechanicStore.remove(null));
+    }
+
+    @Test
+    void testComparatorsNullSafetyAndEdgeCases() {
+        ShortJobComparator shortCmp = new ShortJobComparator();
+        LongJobComparator longCmp = new LongJobComparator();
+
+        Job jNull1 = null;
+        Job jNull2 = null;
+        assertEquals(0, shortCmp.compare(jNull1, jNull2));
+        assertEquals(0, longCmp.compare(jNull1, jNull2));
+
+        Job jEmptyA = new Job();
+        Job jEmptyB = new Job();
+        // All fields null: date, expectedMinutes, createdAt
+        assertDoesNotThrow(() -> shortCmp.compare(jEmptyA, jEmptyB));
+        assertDoesNotThrow(() -> longCmp.compare(jEmptyA, jEmptyB));
+
+        // One null date, one non-null date
+        jEmptyA.setDate(LocalDate.now());
+        assertTrue(shortCmp.compare(jEmptyA, jEmptyB) < 0);
+        assertTrue(longCmp.compare(jEmptyA, jEmptyB) < 0);
     }
 }

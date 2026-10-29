@@ -97,19 +97,26 @@ public class BillingService {
 
         billStore.put(bill);
 
-        // Push ServiceRecord to vehicle's service history stack
+        // Push ServiceRecord to vehicle's service history stack if not already present
         if (vehicle != null) {
-            ServiceRecord record = new ServiceRecord(
-                    bookingId,
-                    LocalDate.now(),
-                    serviceNames,
-                    mechanicNames,
-                    workshopName,
-                    subtotal,
-                    gstAmount,
-                    grandTotal
-            );
-            vehicle.getServiceHistory().push(record);
+            if (vehicle.getServiceHistory() == null) {
+                vehicle.setServiceHistory(new Stack<>());
+            }
+            boolean alreadyPresent = vehicle.getServiceHistory().stream()
+                    .anyMatch(r -> bookingId.equals(r.getBookingId()));
+            if (!alreadyPresent) {
+                ServiceRecord record = new ServiceRecord(
+                        bookingId,
+                        LocalDate.now(),
+                        serviceNames,
+                        mechanicNames,
+                        workshopName,
+                        subtotal,
+                        gstAmount,
+                        grandTotal
+                );
+                vehicle.getServiceHistory().push(record);
+            }
         }
 
         // Save customer file with updated bill and service history

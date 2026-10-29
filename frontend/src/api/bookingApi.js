@@ -11,11 +11,8 @@ export const createBooking = async (bookingData) => {
     const response = await axiosClient.post('/bookings', bookingData);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock booking store.');
-      return mockStore.createBooking(bookingData);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock booking store.', err);
+    return mockStore.createBooking(bookingData);
   }
 };
 
@@ -27,11 +24,8 @@ export const getBookings = async () => {
     const response = await axiosClient.get('/bookings');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock booking store.');
-      return mockStore.getBookings();
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock booking store.', err);
+    return mockStore.getBookings();
   }
 };
 

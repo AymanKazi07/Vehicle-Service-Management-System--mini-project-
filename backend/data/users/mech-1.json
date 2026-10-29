@@ -463,6 +463,326 @@
       "booked" : true,
       "jobId" : "job-7b8e6044",
       "mechanicId" : "mech-1"
+    } ],
+    "2026-10-31" : [ {
+      "date" : "2026-10-31",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-a2447563",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-a2447563",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-8db4787e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-8db4787e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-31aba5b7",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : true,
+      "jobId" : "job-31aba5b7",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : true,
+      "jobId" : "job-c5266e3f",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : true,
+      "jobId" : "job-c5266e3f",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-10-31",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : false,
+      "jobId" : null,
+      "mechanicId" : "mech-1"
+    } ],
+    "2026-11-01" : [ {
+      "date" : "2026-11-01",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-01",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : true,
+      "jobId" : "job-05fa2a0e",
+      "mechanicId" : "mech-1"
+    } ],
+    "2026-11-02" : [ {
+      "date" : "2026-11-02",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-02",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : true,
+      "jobId" : "job-1ecbd2b4",
+      "mechanicId" : "mech-1"
+    } ],
+    "2026-11-03" : [ {
+      "date" : "2026-11-03",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-03",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : true,
+      "jobId" : "job-1e0f0874",
+      "mechanicId" : "mech-1"
+    } ],
+    "2026-11-04" : [ {
+      "date" : "2026-11-04",
+      "startTime" : "09:00:00",
+      "endTime" : "10:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "10:00:00",
+      "endTime" : "11:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "11:00:00",
+      "endTime" : "12:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "12:00:00",
+      "endTime" : "13:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "13:00:00",
+      "endTime" : "14:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "14:00:00",
+      "endTime" : "15:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "15:00:00",
+      "endTime" : "16:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "16:00:00",
+      "endTime" : "17:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
+    }, {
+      "date" : "2026-11-04",
+      "startTime" : "17:00:00",
+      "endTime" : "18:00:00",
+      "booked" : true,
+      "jobId" : "job-f1707ec8",
+      "mechanicId" : "mech-1"
     } ]
   }
 }

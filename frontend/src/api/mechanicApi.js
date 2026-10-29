@@ -11,11 +11,8 @@ export const getJobs = async () => {
     const response = await axiosClient.get('/mechanic/jobs');
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock jobs store.');
-      return mockStore.getJobs();
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock jobs store.', err);
+    return mockStore.getJobs();
   }
 };
 
@@ -31,11 +28,8 @@ export const updateJobStatus = async (jobId, statusOrBody, maybeNotes) => {
     const response = await axiosClient.patch(`/mechanic/jobs/${jobId}/status`, body);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock jobs store.');
-      return mockStore.updateJobStatus(jobId, body.status, body.notes);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock jobs store.', err);
+    return mockStore.updateJobStatus(jobId, body.status, body.notes);
   }
 };
 

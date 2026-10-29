@@ -36,4 +36,20 @@ public class BillLine {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public String getServiceName() {
+        return service;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.service = serviceName;
+    }
+
+    public String getMechanicName() {
+        return mechanic;
+    }
+
+    public void setMechanicName(String mechanicName) {
+        this.mechanic = mechanicName;
+    }
 }

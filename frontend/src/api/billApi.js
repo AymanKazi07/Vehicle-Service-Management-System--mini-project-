@@ -11,11 +11,8 @@ export const getBill = async (bookingId) => {
     const response = await axiosClient.get(`/bills/${bookingId}`);
     return response.data;
   } catch (err) {
-    if (!err.response) {
-      console.warn('Backend unavailable, falling back to mock bill store.');
-      return mockStore.getBill(bookingId);
-    }
-    throw err;
+    console.warn('Backend unavailable or error, falling back to mock bill store.', err);
+    return mockStore.getBill(bookingId);
   }
 };
 

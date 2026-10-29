@@ -65,7 +65,7 @@ export const LoginForm = () => {
           <button
             type="button"
             className="demo-account-chip"
-            onClick={() => handleQuickDemo('mechanic@test.com', 'password123')}
+            onClick={() => handleQuickDemo('rajesh@vehicleservice.com', 'mech123')}
           >
             <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>🔧 Mechanic</div>
             <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Rajesh Kumar</div>
@@ -73,10 +73,10 @@ export const LoginForm = () => {
           <button
             type="button"
             className="demo-account-chip"
-            onClick={() => handleQuickDemo('admin@test.com', 'password123')}
+            onClick={() => handleQuickDemo('admin@vehicleservice.com', 'admin123')}
           >
             <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>🛡️ Admin</div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Vikram Singh</div>
+            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>System Admin</div>
           </button>
         </div>
       </div>

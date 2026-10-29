@@ -51,7 +51,7 @@
     "serviceName" : "Engine overhaul",
     "price" : 6000.0,
     "expectedMinutes" : 480,
-    "queueClass" : "LONG",
+    "queueClass" : "SHORT",
     "date" : "2026-10-26",
     "slotStart" : "09:00:00",
     "mechanicId" : "mech-1",

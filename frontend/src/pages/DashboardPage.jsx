@@ -27,12 +27,14 @@ export const DashboardPage = () => {
   const loadVehicles = async () => {
     try {
       const data = await vehicleApi.getVehicles();
-      setVehicles(data);
-      if (data.length > 0 && !selectedVehicle) {
+      setVehicles(data || []);
+      setError('');
+      if (data && data.length > 0 && !selectedVehicle) {
         setSelectedVehicle(data[0]);
       }
     } catch (err) {
-      setError('Failed to load registered vehicles.');
+      console.warn('Could not load vehicles:', err);
+      setError(err.response?.data?.message || 'Failed to load registered vehicles.');
     } finally {
       setLoading(false);
     }
@@ -56,8 +58,8 @@ export const DashboardPage = () => {
           vehicleApi.getHistory(selectedVehicle.registrationNumber),
           catalogApi.getServices(selectedVehicle.category, selectedVehicle.subType),
         ]);
-        setHistory(historyData);
-        setServices(catalogData);
+        setHistory(historyData || []);
+        setServices(catalogData || []);
       } catch (err) {
         console.error('Failed to load vehicle history or services', err);
       }
@@ -67,10 +69,17 @@ export const DashboardPage = () => {
   }, [selectedVehicle]);
 
   const handleVehicleAdded = async (vehicleData) => {
-    const newVehicle = await vehicleApi.addVehicle(vehicleData);
-    setShowAddVehicle(false);
-    await loadVehicles();
-    setSelectedVehicle(newVehicle);
+    try {
+      const newVehicle = await vehicleApi.addVehicle(vehicleData);
+      setShowAddVehicle(false);
+      await loadVehicles();
+      if (newVehicle) {
+        setSelectedVehicle(newVehicle);
+      }
+    } catch (err) {
+      console.error('Failed to add vehicle:', err);
+      throw err;
+    }
   };
 
   const handleBookingSuccess = (response) => {

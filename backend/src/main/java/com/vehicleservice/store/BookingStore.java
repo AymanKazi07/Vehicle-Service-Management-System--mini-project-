@@ -17,10 +17,12 @@ public class BookingStore {
     }
 
     public void put(Booking booking) {
+        if (booking == null || booking.getBookingId() == null) return;
         bookingsById.put(booking.getBookingId(), booking);
     }
 
     public Booking findById(String bookingId) {
+        if (bookingId == null) return null;
         return bookingsById.get(bookingId);
     }
 

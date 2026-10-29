@@ -27,7 +27,7 @@ axiosClient.interceptors.request.use(
 axiosClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error && error.response && error.response.status === 401) {
+    if (error && error.response && (error.response.status === 401 || error.response.status === 403)) {
       try {
         localStorage.removeItem('token');
         localStorage.removeItem('user');

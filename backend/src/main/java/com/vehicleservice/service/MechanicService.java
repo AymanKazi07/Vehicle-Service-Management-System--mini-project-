@@ -33,7 +33,8 @@ public class MechanicService {
     public List<Job> getJobs(String mechanicId) {
         return jobStore.findAll().stream()
                 .filter(j -> mechanicId.equals(j.getMechanicId()))
-                .sorted(Comparator.comparing(Job::getDate).thenComparing(Job::getSlotStart, Comparator.nullsLast(Comparator.naturalOrder())))
+                .sorted(Comparator.comparing(Job::getDate, Comparator.nullsLast(Comparator.naturalOrder()))
+                        .thenComparing(Job::getSlotStart, Comparator.nullsLast(Comparator.naturalOrder())))
                 .collect(Collectors.toList());
     }
 

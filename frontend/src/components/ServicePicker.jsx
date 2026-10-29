@@ -6,9 +6,12 @@ export const ServicePicker = ({ services, selectedServiceIds, onToggleService })
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredServices = useMemo(() => {
-    if (!services) return [];
+    if (!services || !Array.isArray(services)) return [];
+    const query = (searchQuery || '').trim().toLowerCase();
     return services.filter((srv) => {
-      const matchesSearch = srv.name.toLowerCase().includes(searchQuery.toLowerCase());
+      if (!srv) return false;
+      const srvName = (srv.name || srv.serviceName || '').toLowerCase();
+      const matchesSearch = !query || srvName.includes(query);
       if (filterType === 'SHORT') return matchesSearch && srv.queueClass === 'SHORT';
       if (filterType === 'LONG') return matchesSearch && srv.queueClass === 'LONG';
       return matchesSearch;
@@ -88,14 +91,15 @@ export const ServicePicker = ({ services, selectedServiceIds, onToggleService })
 
       {/* Grid of Catalog Services */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.85rem' }}>
-        {filteredServices.map((srv) => {
-          const isSelected = selectedServiceIds.includes(srv.id);
+        {filteredServices.map((srv, idx) => {
+          const srvId = srv.id || srv.serviceId || `srv-${idx}`;
+          const isSelected = selectedServiceIds.includes(srvId);
           const isShort = srv.queueClass === 'SHORT';
 
           return (
             <div
-              key={srv.id}
-              onClick={() => onToggleService(srv.id)}
+              key={srvId}
+              onClick={() => onToggleService(srvId)}
               style={{
                 display: 'flex',
                 alignItems: 'flex-start',
@@ -132,7 +136,7 @@ export const ServicePicker = ({ services, selectedServiceIds, onToggleService })
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
                   <span style={{ fontWeight: 700, fontSize: '0.925rem', color: 'var(--text-primary)', lineHeight: 1.3 }}>
-                    {srv.name}
+                    {srv.name || srv.serviceName || 'Automotive Service'}
                   </span>
                   <span className={`queue-badge ${isShort ? 'queue-short' : 'queue-long'}`}>
                     {isShort ? '⚡' : '⚙️'} {formatDuration(srv.expectedMinutes)}

@@ -22,27 +22,36 @@ public class VehicleStore {
     }
 
     public VehicleTree getOrCreateTree(String customerId) {
+        if (customerId == null) return new VehicleTree();
         return customerVehicles.computeIfAbsent(customerId, k -> new VehicleTree());
     }
 
     public VehicleTree getTree(String customerId) {
+        if (customerId == null) return null;
         return customerVehicles.get(customerId);
     }
 
     public void addVehicle(String customerId, Vehicle vehicle) {
+        if (customerId == null || vehicle == null) return;
         VehicleTree tree = getOrCreateTree(customerId);
         tree.addVehicle(vehicle);
         if (vehicle.getRegistrationNumber() != null) {
-            vehicleIndex.put(vehicle.getRegistrationNumber().toUpperCase(), vehicle);
+            vehicleIndex.put(normalizeRegNo(vehicle.getRegistrationNumber()), vehicle);
         }
     }
 
     public Vehicle findByRegistrationNumber(String regNo) {
         if (regNo == null) return null;
-        return vehicleIndex.get(regNo.toUpperCase());
+        return vehicleIndex.get(normalizeRegNo(regNo));
+    }
+
+    public static String normalizeRegNo(String regNo) {
+        if (regNo == null) return "";
+        return regNo.replaceAll("\\s+", "").toUpperCase();
     }
 
     public List<Vehicle> getVehiclesByCustomerId(String customerId) {
+        if (customerId == null) return List.of();
         VehicleTree tree = customerVehicles.get(customerId);
         if (tree == null) {
             return List.of();

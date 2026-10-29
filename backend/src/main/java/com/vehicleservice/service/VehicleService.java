@@ -24,17 +24,17 @@ public class VehicleService {
     }
 
     public Vehicle addVehicle(String customerId, VehicleRequest request) {
-        String regNo = request.getRegistrationNumber().trim().toUpperCase();
+        String regNo = VehicleStore.normalizeRegNo(request.getRegistrationNumber());
         if (vehicleStore.findByRegistrationNumber(regNo) != null) {
             throw new ApiException("Vehicle with registration number " + regNo + " is already registered", HttpStatus.CONFLICT);
         }
 
         Vehicle vehicle = new Vehicle(
                 regNo,
-                request.getOwnerName().trim(),
-                request.getModelName().trim(),
+                request.getOwnerName() != null ? request.getOwnerName().trim() : "",
+                request.getModelName() != null ? request.getModelName().trim() : "",
                 request.getCategory(),
-                request.getSubType().trim()
+                request.getSubType() != null ? request.getSubType().trim() : "DEFAULT"
         );
 
         vehicleStore.addVehicle(customerId, vehicle);
@@ -47,19 +47,22 @@ public class VehicleService {
     }
 
     public List<ServiceRecord> getHistory(String customerId, String regNo) {
-        Vehicle vehicle = vehicleStore.findByRegistrationNumber(regNo.trim().toUpperCase());
+        Vehicle vehicle = vehicleStore.findByRegistrationNumber(regNo);
         if (vehicle == null) {
             throw new ApiException("Vehicle not found with registration number " + regNo, HttpStatus.NOT_FOUND);
         }
 
         // Verify that the vehicle belongs to this customer
         boolean owned = vehicleStore.getVehiclesByCustomerId(customerId).stream()
-                .anyMatch(v -> v.getRegistrationNumber().equalsIgnoreCase(regNo));
+                .anyMatch(v -> VehicleStore.normalizeRegNo(v.getRegistrationNumber()).equals(VehicleStore.normalizeRegNo(regNo)));
         if (!owned) {
             throw new ApiException("Access denied: You do not own this vehicle", HttpStatus.FORBIDDEN);
         }
 
         // Return latest first (from top of stack to bottom)
+        if (vehicle.getServiceHistory() == null || vehicle.getServiceHistory().isEmpty()) {
+            return Collections.emptyList();
+        }
         List<ServiceRecord> history = new ArrayList<>(vehicle.getServiceHistory());
         Collections.reverse(history);
         return history;

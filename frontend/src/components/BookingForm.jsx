@@ -35,10 +35,14 @@ export const BookingForm = ({ selectedVehicle, services, onBookingSuccess }) => 
     );
   };
 
-  const selectedServices = services.filter((s) => selectedServiceIds.includes(s.id));
-  const subtotalEstimate = selectedServices.reduce((sum, s) => sum + s.price, 0);
-  const totalMinutes = selectedServices.reduce((sum, s) => sum + s.expectedMinutes, 0);
-  const gstEstimate = subtotalEstimate * 0.18;
+  const selectedServices = (services || []).filter((s) => {
+    if (!s) return false;
+    const sId = s.id || s.serviceId;
+    return selectedServiceIds.includes(sId);
+  });
+  const subtotalEstimate = selectedServices.reduce((sum, s) => sum + (Number(s.price) || 0), 0);
+  const totalMinutes = selectedServices.reduce((sum, s) => sum + (Number(s.expectedMinutes) || 0), 0);
+  const gstEstimate = Math.round(subtotalEstimate * 0.18 * 100) / 100;
   const grandTotalEstimate = subtotalEstimate + gstEstimate;
 
   const setRelativeDate = (daysAhead) => {
@@ -179,17 +183,20 @@ export const BookingForm = ({ selectedVehicle, services, onBookingSuccess }) => 
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
-            {selectedServices.map((s) => (
-              <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.875rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ color: 'var(--text-primary)' }}>{s.name}</span>
-                  <span className={`queue-badge ${s.queueClass === 'SHORT' ? 'queue-short' : 'queue-long'}`} style={{ fontSize: '0.65rem' }}>
-                    {s.queueClass}
-                  </span>
+            {selectedServices.map((s, idx) => {
+              const sId = s.id || s.serviceId || `sel-${idx}`;
+              return (
+                <div key={sId} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.875rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--text-primary)' }}>{s.name || s.serviceName || 'Automotive Service'}</span>
+                    <span className={`queue-badge ${s.queueClass === 'SHORT' ? 'queue-short' : 'queue-long'}`} style={{ fontSize: '0.65rem' }}>
+                      {s.queueClass || 'SHORT'}
+                    </span>
+                  </div>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{formatCurrency(s.price || 0)}</span>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{formatCurrency(s.price)}</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>

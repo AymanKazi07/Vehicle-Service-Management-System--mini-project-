@@ -389,7 +389,29 @@ public class JsonFileStorage {
             mechanicStore.putMechanic(mech2);
             saveUser(m2.getId());
 
-            log.info("Seeded 2 default mechanics: rajesh@vehicleservice.com and amit@vehicleservice.com");
+        }
+
+        // Seed 1 Default Customer (Aarav Sharma) if none exist
+        if (userStore.findByEmail("customer@test.com") == null) {
+            String custId = "cust-default-1";
+            User cust = new User(
+                    custId,
+                    "Aarav Sharma",
+                    "customer@test.com",
+                    passwordEncoder.encode("password123"),
+                    Role.CUSTOMER
+            );
+            userStore.put(cust);
+
+            Vehicle v1 = new Vehicle("MH02AB1234", "Aarav Sharma", "Royal Enfield Classic 350", Category.TWO_WHEELER, "Geared");
+            Vehicle v2 = new Vehicle("DL01XY9876", "Aarav Sharma", "Hyundai Creta SX", Category.FOUR_WHEELER, "Petrol");
+            vehicleStore.addVehicle(custId, v1);
+            vehicleStore.addVehicle(custId, v2);
+
+            saveUser(custId);
+            log.info("Seeded default customer: customer@test.com (Aarav Sharma)");
+
+
         }
     }
 

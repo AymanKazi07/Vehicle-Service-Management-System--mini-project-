@@ -51,7 +51,7 @@ public class BookingService {
 
         // Verify customer owns this vehicle
         boolean owned = vehicleStore.getVehiclesByCustomerId(customerId).stream()
-                .anyMatch(v -> v.getRegistrationNumber().equalsIgnoreCase(regNo));
+                .anyMatch(v -> VehicleStore.normalizeRegNo(v.getRegistrationNumber()).equals(VehicleStore.normalizeRegNo(regNo)));
         if (!owned) {
             throw new ApiException("Access denied: You do not own vehicle " + regNo, HttpStatus.FORBIDDEN);
         }

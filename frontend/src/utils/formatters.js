@@ -13,6 +13,17 @@ export const formatCurrency = (amount) => formatINR(amount, true);
 
 export const formatDate = (dateStr) => {
   if (!dateStr) return '';
+  if (typeof dateStr === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+    const [year, month, day] = dateStr.slice(0, 10).split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      });
+    }
+  }
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return String(dateStr);
   return date.toLocaleDateString('en-IN', {

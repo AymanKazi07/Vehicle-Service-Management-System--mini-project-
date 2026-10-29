@@ -15,10 +15,12 @@ public class BillStore {
     }
 
     public void put(Bill bill) {
+        if (bill == null || bill.getBookingId() == null) return;
         billsByBookingId.put(bill.getBookingId(), bill);
     }
 
     public Bill findByBookingId(String bookingId) {
+        if (bookingId == null) return null;
         return billsByBookingId.get(bookingId);
     }
 

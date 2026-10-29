@@ -91,10 +91,10 @@ export const BillView = ({ bill, onClose }) => {
               {bill.lines?.map((line, idx) => (
                 <tr key={idx} style={{ borderBottom: '1px solid #f1f5f9', fontSize: '0.925rem' }}>
                   <td style={{ padding: '0.85rem 0', fontWeight: 600, color: '#1e293b' }}>
-                    {line.service}
+                    {line.service || line.serviceName || 'Automotive Service'}
                   </td>
                   <td style={{ padding: '0.85rem 0', color: '#64748b', fontSize: '0.875rem' }}>
-                    {line.mechanic || 'Assigned Tech'}
+                    {line.mechanic || line.mechanicName || 'Assigned Specialist'}
                   </td>
                   <td style={{ padding: '0.85rem 0', textAlign: 'right', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-mono)' }}>
                     {formatCurrency(line.price)}
