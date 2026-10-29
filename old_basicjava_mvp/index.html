@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Service Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="navbar">
+      <div class="brand">
+        <span class="icon">🚗</span>
+        <div>
+          <h2>AutoFlow Systems</h2>
+          <small>Java & DSA Workshop Platform</small>
+        </div>
+      </div>
+      <nav class="role-nav">
+        <button class="nav-btn active" onclick="switchRole('customer')">Customer Portal</button>
+        <button class="nav-btn" onclick="switchRole('mechanic')">Mechanic Bay</button>
+        <button class="nav-btn" onclick="switchRole('admin')">Admin Analytics</button>
+      </nav>
+    </header>
+
+    <main class="content-body">
+      <!-- CUSTOMER VIEW -->
+      <section id="customer-view" class="view-panel active">
+        <div class="card grid-2">
+          <!-- Login/Register Box -->
+          <div class="form-container">
+            <h3>Customer Verification</h3>
+            <p class="subtitle">Access your vehicle dashboard using hashed key lookup</p>
+            
+            <div id="login-box">
+              <div class="form-group">
+                <label>Vehicle Registration Number</label>
+                <input type="text" id="cust-reg" placeholder="e.g. MH12AB1234" uppercase>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="cust-pwd" placeholder="••••••••">
+              </div>
+              <button class="btn btn-primary" onclick="handleCustomerLogin()">Verify & Login</button>
+              <p class="switch-text">New vehicle? <a href="javascript:void(0)" onclick="toggleAuth(true)">Register here</a></p>
+            </div>
+
+            <div id="register-box" class="hidden">
+              <div class="form-group">
+                <label>Vehicle Reg Number</label>
+                <input type="text" id="reg-no" placeholder="e.g. MH14CD5678">
+              </div>
+              <div class="form-group">
+                <label>Owner Name</label>
+                <input type="text" id="reg-name" placeholder="Full Name">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" id="reg-phone" placeholder="10-digit Mobile">
+              </div>
+              <div class="form-group">
+                <label>Vehicle Model</label>
+                <input type="text" id="reg-model" placeholder="Model & Year">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="reg-pwd" placeholder="Choose Password">
+              </div>
+              <button class="btn btn-success" onclick="handleCustomerRegister()">Save to Hash Table</button>
+              <p class="switch-text">Already registered? <a href="javascript:void(0)" onclick="toggleAuth(false)">Back to Login</a></p>
+            </div>
+          </div>
+
+          <!-- Customer Service Booking & History -->
+          <div class="dashboard-container" id="cust-dashboard" style="opacity: 0.5; pointer-events: none;">
+            <div class="active-profile" id="user-profile-banner">
+              <strong>Active Session:</strong> Please authenticate
+            </div>
+
+            <h4 style="margin-top: 1rem;">Book Workshop Appointment</h4>
+            <div class="form-group">
+              <label>Service Package</label>
+              <select id="service-package">
+                <option value="Periodic General Maintenance">Periodic General Maintenance</option>
+                <option value="Brake Pad Inspection & Replacement">Brake Pad Inspection & Replacement</option>
+                <option value="Engine Diagnostics & Repair">Engine Diagnostics & Repair</option>
+                <option value="Express Oil & Filter Change">Express Oil & Filter Change</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="handleBookService()">Enqueue Service Order</button>
+
+            <h4 style="margin-top: 1.5rem;">Vehicle Service History (LIFO Stack)</h4>
+            <div class="history-stack-box" id="history-stack-display">
+              <div class="empty-state">No vehicle authenticated.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MECHANIC VIEW -->
+      <section id="mechanic-view" class="view-panel">
+        <div class="card">
+          <div class="header-split">
+            <div>
+              <h3>Service Bay Job Queue (FIFO)</h3>
+              <p class="subtitle">Technicians pull incoming tasks from the front of the queue</p>
+            </div>
+            <span class="badge" id="queue-count-badge">0 Pending Orders</span>
+          </div>
+
+          <div class="job-processing-area" id="active-job-area">
+            <div class="empty-state">No jobs currently pending in the workshop queue.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMIN VIEW -->
+      <section id="admin-view" class="view-panel">
+        <div class="card">
+          <h3>Daily Audit & Performance Analytics</h3>
+          <p class="subtitle">Real-time statistics derived from Hash Table and Stack records</p>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-title">Registered Fleet</span>
+              <span class="stat-value" id="stat-fleet">2</span>
+              <span class="stat-tag">Hash Table Size</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-title">Active Queue</span>
+              <span class="stat-value" id="stat-queue">1</span>
+              <span class="stat-tag">FIFO Jobs</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-title">Completed Repairs</span>
+              <span class="stat-value" id="stat-completed">1</span>
+              <span class="stat-tag">Archived in Stacks</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-title">Completion Efficiency</span>
+              <span class="stat-value" id="stat-eff">50%</span>
+              <span class="stat-tag">Throughput</span>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem;">Service Type Distribution</h4>
+          <div id="service-analytics-list" class="analytics-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
